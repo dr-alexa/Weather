@@ -30,16 +30,17 @@ def send_pogoda(message):
 
         #изображение
         if temp < 5.0:
-            image = 'istockphoto-1047001668-170667a.jpg'
+            image = 'snow.jpg'
             file = open('./' + image, 'rb')
             bot.send_photo(message.chat.id, file)
         else:
-            image = 'OIP (4).webp' if temp > 5.0 else 'sun-cloud.webp'
+            image = 'sun.webp' if temp > 5.0 else 'sun-cloud.webp'
             file = open('./' + image, 'rb') #обращение к текущей директории
             bot.send_photo(message.chat.id, file)
 
     else:
         bot.reply_to(message, 'Точно тот город?')
+
 
 
 bot.polling(none_stop=True)
